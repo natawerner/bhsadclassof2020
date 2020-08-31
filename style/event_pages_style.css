@@ -1,0 +1,230 @@
+@font-face {
+  font-family: 'Standard';
+  src: url('../fonts/standard-book.otf');
+}
+
+@font-face {
+  font-family: 'Wremena';
+  src: url('../fonts/Wremena-Light.otf');
+}
+
+body {
+  background-color: #FFFE9D;
+}
+.wrapper {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 48px;
+  bottom: 48px;
+  left: 48px;
+  right: 48px;
+  font-family: Wremena;
+  font-size: 4vw;
+}
+:root {
+    --cellHeight: calc(100vh - 96px);
+    --cellWidth:calc((var(--cellHeight) - 30px) / 3 * 5 + 30px);
+    --rowHeight: calc((var(--cellHeight) - 30px) / 4);
+  }
+
+.cells {
+  position: absolute;
+  display: grid;
+  height: var(--cellHeight);
+  max-width: var(--cellWidth);
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: var(--rowHeight);
+  grid-gap: 10px;
+}
+
+
+.cells > div{
+  display: flex;
+  flex-direction: row;
+  border-style: solid;
+  border-color: #F63BCD;
+  border-width: 1px;
+  border-radius: 3.5vh;
+  font-size: 1.5vw;
+
+
+}
+.cells > div p {
+  color: black;
+  text-decoration: none;
+}
+
+.activeEvent {
+  background-color: #F63BCD;
+  cursor: pointer;
+
+  text-align: center;
+  justify-content:center;
+  padding:20px;
+}
+
+.activeEvent p {
+  margin: auto;
+}
+
+.date {
+  background-color: white;
+  cursor: default;
+
+  text-align: center;
+  justify-content:center;
+  padding:20px;
+}
+
+.date p {
+margin: auto;
+}
+
+#event0 {
+  grid-column: 1;
+}
+#event1 {
+  grid-column: 2/4;
+}
+#event2 {
+  grid-column: 4/5;
+}
+#event3 {
+  grid-column: 1;
+  grid-row: 2;
+}
+#event4 {
+  grid-column: 2;
+  grid-row: 2;
+}
+#event5 {
+  grid-column: 3;
+  grid-row: 2;
+}
+#event6 {
+  grid-column: 4;
+  grid-row: 2;
+}
+#event7 {
+  grid-column: 1;
+  grid-row: 3;
+}
+#event8 {
+  grid-column: 2;
+  grid-row: 3;
+}
+#event9 {
+  grid-column: 3;
+  grid-row: 3;
+}
+#event10 {
+  grid-column: 4;
+  grid-row: 3;
+}
+#event11 {
+  grid-column: 1/3;
+  grid-row: 4;
+}
+#event12 {
+  grid-column: 3;
+  grid-row: 4;
+}
+#event13 {
+  grid-column: 4;
+  grid-row: 4;
+}
+
+.description{
+  padding:40px;
+  background-color: white;
+  cursor: default;
+}
+.wassilyDescription {
+  grid-column: 2/4;
+  grid-row: 1/5;
+}
+.sofiaDescription {
+  grid-column: 2/4;
+  grid-row: 2/5;
+}
+.vasilissaDescription {
+  grid-column: 2/4;
+  grid-row: 1/5;
+}
+.lesyaDescription {
+  grid-column: 2/4;
+  grid-row: 1/5;
+}
+.reginaDescription {
+  grid-column: 3/5;
+  grid-row: 1/5;
+}
+.tashaDescription {
+  grid-column: 1/3;
+  grid-row: 1/5;
+}
+.anastasiaDescription {
+  grid-column: 2/4;
+  grid-row: 1/5;
+}
+.martinDescription {
+  grid-column: 2/4;
+  grid-row: 1/5;
+}
+.evgeniyaDescription {
+  grid-column: 3/5;
+  grid-row: 1/5;
+}
+.sonyaDescription {
+  grid-column: 1/3;
+  grid-row: 1/5;
+}
+.mikhailDescription {
+  grid-column: 2/4;
+  grid-row: 1/5;
+}
+.maria-natDescription {
+  grid-column: 1/3;
+  grid-row: 1/4;
+}
+.kseniaDescription {
+  grid-column: 1/3;
+  grid-row: 1/5;
+}
+.lizaDescription {
+  grid-column: 2/4;
+  grid-row: 1/5;
+}
+
+
+@media only screen
+     and (max-width: 1000px) {
+
+
+        .wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          top: 86px;
+          bottom: 86px;
+          left: 85px;
+          right: 85px;
+          font-size: 3vw;
+
+        }
+
+
+        .cells {
+          height: var(--cellHeightMob);
+          width: 100%;
+
+          grid-auto-rows: 1fr;
+        }
+        .cells > div {
+
+          font-size: 3vw;
+        }
+
+      }

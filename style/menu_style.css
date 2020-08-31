@@ -1,0 +1,167 @@
+@font-face {
+  font-family: 'Standard';
+  src: url('../fonts/standard-book.otf');
+}
+
+@font-face {
+  font-family: 'Wremena';
+  src: url('../fonts/Wremena-Light.otf');
+}
+
+:root {
+    --windowHeightMob: calc(var(--vh) * 100);
+    --cellHeightMob: calc(var(--windowHeightMob) - 172px);
+
+  }
+
+/*MENU*/
+
+.menu {
+  position: fixed;
+  font-family: Standard;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: var(--windowHeightMob);
+  text-align: center;
+  justify-content: space-between;
+  font-size: 18px;
+}
+
+.verticalMenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+
+#menuProjects {
+  height: 38px;
+  background-color: #C5FED4;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
+  line-height: 36px;
+  cursor: pointer;
+  }
+
+#menuInfo {
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  width: 38px;
+  background-color: #B0D0FF;
+  border-style: none solid none solid;
+  border-color: #000000;
+  border-width: 1px;
+  line-height: 36px;
+  cursor: pointer;
+}
+
+#menuEvents {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  width: 38px;
+  background-color: #FFFE9D;
+  border-style: none solid none solid;
+  border-color: #000000;
+  border-width: 1px;
+  line-height: 36px;
+  cursor: pointer;
+}
+
+
+#menuLive {
+  height: 38px;
+  background-color: #FFFFFF;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
+  line-height: 36px;
+  cursor: pointer;
+  }
+
+.liveNow {
+  animation: menuLive 1s infinite alternate;
+}
+
+
+.preload {
+  display: none;
+}
+@keyframes menuLive {
+    0% {background-color: #FFFFFF;}
+    100% {background-color: red;}
+  }
+  .marquee {
+     overflow: hidden;
+
+  }
+
+  .marquee span {
+      display: inline-block;
+      white-space: nowrap;
+      width: var(--tw);
+      text-shadow: var(--tw) 0 currentColor,
+                   calc(var(--tw) * 2) 0 currentColor,
+                   calc(var(--tw) * 3) 0 currentColor,
+                   calc(var(--tw) * 4) 0 currentColor;
+
+      will-change: transform;
+      animation: marquee var(--ad) linear infinite;
+      display: block;
+      text-align: center;
+  }
+
+  @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+  }
+
+
+@media only screen
+    and (max-width: 1000px){
+
+      .menu {
+        position: fixed;
+        font-family: Standard;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: var(--windowHeightMob);
+        text-align: center;
+        justify-content: space-between;
+        font-size: 36px;
+      }
+
+
+      .verticalMenu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-grow: 1;
+      }
+
+      #menuProjects {
+        height: 76px;
+        line-height: 74px;
+        }
+
+      #menuInfo {
+        width: 76px;
+        line-height: 74px;
+      }
+
+      #menuEvents {
+        width: 76px;
+        line-height: 74px;
+      }
+
+
+      #menuLive {
+        height: 76px;
+        line-height: 74px;
+        }
+     }
+}

@@ -1,0 +1,153 @@
+@font-face {
+  font-family: 'Standard';
+  src: url('../fonts/standard-book.otf');
+}
+
+@font-face {
+  font-family: 'Wremena';
+  src: url('../fonts/Wremena-Light.otf');
+}
+
+body {
+  background-color: #FFFE9D;
+}
+.container::-webkit-scrollbar {
+  display: none;}
+
+:root {
+    --cellHeight: calc(100vh - 76px);
+    --cellWidth: calc((var(--cellHeight) - 30px) / 3 * 5 + 30px);
+    --windowHeightMob: calc(var(--vh) * 100);
+    --cellHeightMob: calc(var(--windowHeightMob) - (172px * 3));
+    --cellWidthMob: calc(100vw - (172px * 3) - 1px);
+  }
+.container {
+  position: absolute;
+  top: 38px;
+  bottom:38px;
+  left: 48px;
+  right: 48px;
+  overflow: scroll;
+}
+.wrapper {
+  font-family: Wremena;
+  font-size: 1.5vw;
+  display: grid;
+  grid-gap: 10px;
+  max-width: var(--cellWidth);
+  margin: auto;
+}
+
+.title {
+  margin-top: 10px;
+  border-style: solid;
+  border-color: #F63BCD;
+  border-width: 1px;
+  border-radius: 3.5vh;
+  background-color: white;
+  text-align: center;
+  cursor: pointer;
+}
+.title h1 {
+  padding: 20px;
+}
+
+.title:hover {
+  background-color: #F63BCD;
+}
+
+.wrapper {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: auto;
+}
+.wrapper > div {
+  border-style: solid;
+  border-color: #F63BCD;
+  border-width: 1px;
+  border-radius: 3.5vh;
+  background-color: white;
+}
+.desc {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 160px;
+  padding-right: 160px;
+}
+
+.videoContainer {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.content {
+  margin-bottom: 10px;
+}
+
+.videoContainer iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+  }
+
+  .block a {
+    text-decoration: none;
+    color: #0F44FF;
+  }
+  .block a:hover {
+    text-decoration: underline;
+  }
+
+  .afterLive {
+    text-align: center;
+    font-size: 4vw;
+    padding: 40px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: #0F44FF;
+  }
+
+.afterLive:hover {
+  text-decoration: underline;
+}
+
+.textEvent {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: auto;
+}
+
+@media only screen
+     and (max-width: 1000px) {
+
+       .container {
+         top: 77px;
+         bottom: 77px;
+         left: 85px;
+         right: 85px;
+         max-width: 100%;
+
+       }
+        .wrapper {
+          font-size: 3vw;
+          grid-template-rows: min-content min-content max-content;
+          min-height: var(--cellHeightMob);
+          max-width: 100%;
+        }
+
+        .desc {
+          padding: 40px;
+        }
+
+        .list {
+          text-indent: 0px;
+        }
+      }

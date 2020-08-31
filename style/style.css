@@ -1,0 +1,130 @@
+@font-face {
+  font-family: 'Standard';
+  src: url('../fonts/standard-book.otf');
+}
+
+@font-face {
+  font-family: 'Wremena';
+  src: url('../fonts/Wremena-Light.otf');
+}
+
+body {
+  background-color: #C5FED4;
+}
+
+
+.wrapper {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 48px;
+  bottom: 48px;
+  left: 48px;
+  right: 48px;
+  font-family: Wremena;
+  font-size: 4vw;
+}
+
+
+:root {
+    --cellHeight: calc(100vh - 96px);
+    --cellWidth:calc((var(--cellHeight) - 30px) / 3 * 5 + 30px);
+    --rowHeight: calc((var(--cellHeight) - 30px) / 4);
+    --windowHeightMob: calc(var(--vh) * 100);
+    --cellHeightMob: calc(var(--windowHeightMob) - (172px * 3));
+  }
+
+.cells {
+  display: grid;
+  height: var(--cellHeight);
+  width: var(--cellWidth);
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: var(--rowHeight);
+  grid-gap: 10px;
+}
+
+
+.cells > div {
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  border-style: solid;
+  border-color: #0F44FF;
+  border-width: 1px;
+  border-radius: 3.5vh;
+  text-align: center;
+  justify-content:center;
+  background-color: #FFFFFF;
+
+}
+
+
+.cells > div p {
+  text-decoration: none;
+  margin: auto;
+}
+
+
+
+.cells > div:hover {
+  background-color: #0F44FF;
+  font-size: 1.5vw;
+  cursor: pointer;
+  color: white;
+}
+
+.constr {
+  grid-column: 1/5;
+  grid-row: 1/5;
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  border-color: #0F44FF;
+  border-width: 1px;
+  border-radius: 3.5vh;
+  text-align: center;
+  justify-content:center;
+  background-color: #FFFFFF;
+  height: 100%;
+  width: var(--cellWidth);
+}
+
+.constr p {
+  cursor: default;
+}
+
+@media only screen
+     and (max-width: 1000px) {
+
+
+        .wrapper {
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          top: 86px;
+          bottom: 86px;
+          left: 86px;
+          right: 86px;
+          font-family: Wremena;
+          font-size: 4vw;
+
+        }
+
+
+        .cells {
+          height: var(--cellHeightMob);
+          width: 100%;
+
+          grid-auto-rows: 1fr;
+        }
+
+        .constr {
+          height: var(--cellHeightMob);
+        }
+        .cells > div:hover {
+          font-size: 3vw;
+        }
+
+      }
